@@ -1,0 +1,10 @@
+data/
+node_modules/
+target/
+.expo/
+dist/
+*.apk
+.env
+server/uploads/
+server/data/
+app/assets/towers.json

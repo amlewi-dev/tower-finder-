@@ -1,0 +1,3 @@
+# Root of the Tower Finder repo. app/ has its own pnpm workspace (node-linker=hoisted for Expo).
+packages:
+  - "."

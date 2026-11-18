@@ -1,0 +1,31 @@
+{
+  "name": "tower-finder",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "bootstrap": "pnpm install && pnpm --dir app install && pnpm build:server && pnpm build:etl",
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "node scripts/dev.mjs --web",
+    "dev:tunnel": "node scripts/dev.mjs --tunnel",
+    "dev:clear": "node scripts/dev.mjs -c",
+    "api": "node scripts/dev.mjs --api-only",
+    "app": "node scripts/dev.mjs --app-only",
+    "data": "bash scripts/fetch_osm.sh && bash scripts/build_data.sh",
+    "data:rebuild": "bash scripts/build_data.sh",
+    "build": "pnpm build:server && pnpm build:etl && pnpm typecheck",
+    "build:server": "cargo build --release --manifest-path server/Cargo.toml",
+    "build:etl": "cargo build --release --manifest-path etl/Cargo.toml",
+    "build:web": "pnpm --dir app exec expo export --platform web --output-dir dist",
+    "build:apk": "pnpm --dir app dlx eas-cli build --platform android --profile preview",
+    "build:apk:local": "cd app && pnpm exec expo prebuild --platform android --clean && cd android && ./gradlew assembleRelease",
+    "typecheck": "pnpm --dir app exec tsc --noEmit",
+    "check": "cargo check --manifest-path server/Cargo.toml && cargo check --manifest-path etl/Cargo.toml && pnpm typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
