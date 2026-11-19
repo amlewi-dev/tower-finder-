@@ -1,0 +1,13 @@
+# Used by EAS instead of .gitignore when packing the project for a cloud build.
+data/
+node_modules/
+target/
+.expo/
+dist/
+*.apk
+.env
+server/uploads/
+server/data/
+*.keystore
+*.jks
+*.aab

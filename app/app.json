@@ -27,16 +27,30 @@
     "plugins": [
       [
         "expo-location",
-        { "locationWhenInUsePermission": "Tower Finder uses your location to find the nearest cell towers and to place tower submissions." }
+        {
+          "locationWhenInUsePermission": "Tower Finder uses your location to find the nearest cell towers and to place tower submissions."
+        }
       ],
       [
         "expo-image-picker",
-        { "cameraPermission": "Tower Finder uses the camera so you can photograph a tower you are submitting." }
+        {
+          "cameraPermission": "Tower Finder uses the camera so you can photograph a tower you are submitting."
+        }
       ],
       [
         "expo-build-properties",
-        { "android": { "usesCleartextTraffic": true } }
-      ]
-    ]
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "30745bc8-efab-440c-9650-f7cc8491638a"
+      }
+    }
   }
 }
